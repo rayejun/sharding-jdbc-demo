@@ -66,7 +66,7 @@ public class ShardingUtil {
                 }
                 return type.equals("db") ? sharding.getTargetDb() : sharding.getTargetTable();
             } else {
-                return type.equals("db") ? defaultDataSourceName : shardingValue.getValue();
+                return type.equals("db") ? defaultDataSourceName : shardingValue.getLogicTableName();
             }
         } else {
             ObjectMapper objectMapper = new ObjectMapper();
