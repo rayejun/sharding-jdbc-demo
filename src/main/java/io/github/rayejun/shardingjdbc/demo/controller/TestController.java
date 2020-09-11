@@ -26,4 +26,9 @@ public class TestController {
         userMapper.insertSelective(user);
         return "success";
     }
+
+    @RequestMapping("user/get")
+    public Object userInsert(String id) {
+        return userMapper.selectByPrimaryKey(id);
+    }
 }

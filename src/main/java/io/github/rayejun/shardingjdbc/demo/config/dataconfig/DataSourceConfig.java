@@ -62,7 +62,8 @@ public class DataSourceConfig {
         }
 
         // 配置base_user表规则
-        TableRuleConfiguration userDataTableRuleConfiguration = new TableRuleConfiguration("base_user", "ds$->{0..1}.base_user,ds$->{0..1}.base_user$->{1..2}");
+        TableRuleConfiguration userDataTableRuleConfiguration = new TableRuleConfiguration("base_user", "ds$->{0..1}.base_user");
+
         // 配置分库
         userDataTableRuleConfiguration.setDatabaseShardingStrategyConfig(new StandardShardingStrategyConfiguration("school_id", dbPreciseShardingAlgorithm()));
         // 配置分表
